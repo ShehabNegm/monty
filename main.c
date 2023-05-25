@@ -9,6 +9,8 @@
 
 int main(int ac, char **av)
 {
+	stack_t *head = NULL;
+	char **opcode;
 	FILE *f;
 	unsigned int line = 0;
 	char buf[1024];
@@ -29,7 +31,9 @@ int main(int ac, char **av)
 	{
 		line++;
 		if (strcmp(buf, "\n") != 0)
-			str_handler(buf, line);
+			opcode = str_handler(buf, line);
+
+		match_opcode(opcode, line, &head); 
 	}
 	return (0);
 }

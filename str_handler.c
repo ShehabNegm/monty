@@ -4,8 +4,9 @@
   * handling the line by splitting it and remove spaces
   * @buf: the line of the file pointer to string
   * @line_number: line number at the file
+  * Return: opcode and its argument as an array
   */
-void str_handler(char *buf, unsigned int line_number)
+char **str_handler(char *buf, unsigned int line_number)
 {
 	const char *delim = " \t\r\a\n";
 	char *token;
@@ -13,7 +14,7 @@ void str_handler(char *buf, unsigned int line_number)
 	char **opcode = NULL;
 	(void) line_number;
 
-	opcode = malloc(sizeof(char *) * 64);
+	opcode = malloc(sizeof(char *) * 1024);
 	if (opcode == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed");
@@ -33,6 +34,7 @@ void str_handler(char *buf, unsigned int line_number)
 
 
 
-	printf("%s\n", opcode[0]);
-	printf("%s\n", opcode[1]);
+	/*printf("%s\n", opcode[0]);
+	printf("%s\n", opcode[1]);*/
+	return (opcode);
 }
