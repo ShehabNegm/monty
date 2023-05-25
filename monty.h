@@ -42,6 +42,7 @@ int isnum(char *str);
 func match_opcode(char *args);
 void push(stack_t **head, unsigned int line);
 void pall(stack_t **head, unsigned int line);
+void pint(stack_t **head, unsigned int line);
 stack_t *add_dnodeint(stack_t **head, const int n);
 
 

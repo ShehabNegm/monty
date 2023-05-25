@@ -10,8 +10,8 @@ func match_opcode(char *args)
 	instruction_t opcode_f[] = {
 		{"push", push},
 		{"pall", pall},
-		/*{"pint", pint},
-		{"pop", pop},
+		{"pint", pint},
+		/*{"pop", pop},
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},*/

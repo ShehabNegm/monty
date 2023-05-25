@@ -7,7 +7,7 @@
   */
 char *str_handler(char *buf)
 {
-	const char *delim = " \t\r\a\n";
+	const char *delim = " \n";
 	char *token;
 
 	token = strtok(buf, delim);
