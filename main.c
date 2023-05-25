@@ -40,5 +40,6 @@ int main(int ac, char **av)
 		}
 		op_f(&head, line);
 	}
+	fclose(f);
 	return (0);
 }
