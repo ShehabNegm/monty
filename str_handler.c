@@ -3,38 +3,15 @@
   * str_handler - function to handle string in a line of the file
   * handling the line by splitting it and remove spaces
   * @buf: the line of the file pointer to string
-  * @line_number: line number at the file
-  * Return: opcode and its argument as an array
+  * Return: opcode and its argument
   */
-char **str_handler(char *buf, unsigned int line_number)
+char *str_handler(char *buf)
 {
 	const char *delim = " \t\r\a\n";
 	char *token;
-	int token_count = 0;
-	char **opcode = NULL;
-	(void) line_number;
-
-	opcode = malloc(sizeof(char *) * 1024);
-	if (opcode == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed");
-		exit(EXIT_FAILURE);
-	}
-
 
 	token = strtok(buf, delim);
-	while (token)
-	{
-		opcode[token_count] = token;
-		token = strtok(NULL, delim);
-		token_count++;
-	}
-	if (opcode[1] == NULL)
-		opcode[1] = "\0";
-
-
-
-	/*printf("%s\n", opcode[0]);
-	printf("%s\n", opcode[1]);*/
-	return (opcode);
+	if (token == NULL)
+		return (NULL);
+	return (token);
 }

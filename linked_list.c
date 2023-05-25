@@ -2,7 +2,7 @@
 /**
   * add_dnodeint - function to insert element at the head of d linked list
   * @head: header of the doubly linked list
-  * @line: line at the opcode
+  * @n: int to be inserted
   * Return: will return the new head;
   */
 
@@ -26,19 +26,4 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	*head = new;
 
 	return (new);
-}
-/**
-  * print_dlistint - function to print elements of d linked list
-  * @h: header of the doubly linked list
-  */
-
-void print_dlistint(stack_t **h)
-{
-	stack_t *tmp = *h;
-
-	while (tmp != NULL)
-	{
-		printf("%d\n", tmp->n);
-		tmp = tmp->next;
-	}
 }

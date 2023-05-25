@@ -36,10 +36,13 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-char **str_handler(char *buf, unsigned int line_number);
-void match_opcode(char **opcode, unsigned int line, stack_t **head);
+typedef void (*func)(stack_t **stack, unsigned int line_number);
+char *str_handler(char *buf);
+int isnum(char *str);
+func match_opcode(char *args);
 void push(stack_t **head, unsigned int line);
+void pall(stack_t **head, unsigned int line);
 stack_t *add_dnodeint(stack_t **head, const int n);
-void print_dlistint(stack_t **h);
+
 
 #endif

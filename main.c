@@ -10,10 +10,11 @@
 int main(int ac, char **av)
 {
 	stack_t *head = NULL;
-	char **opcode;
 	FILE *f;
 	unsigned int line = 0;
 	char buf[1024];
+	char *opcode;
+	func op_f;
 
 	if (ac != 2 || access(av[1], F_OK) != 0)
 	{
@@ -30,11 +31,14 @@ int main(int ac, char **av)
 	while (fgets(buf, 1024, f))
 	{
 		line++;
-		if (strcmp(buf, "\n") != 0)
-			opcode = str_handler(buf, line);
-
-		match_opcode(opcode, line, &head); 
+		opcode = str_handler(buf);
+		op_f = match_opcode(opcode);
+		if (op_f == NULL)
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
+			exit(EXIT_FAILURE);
+		}
+		op_f(&head, line);
 	}
 	return (0);
 }
-
