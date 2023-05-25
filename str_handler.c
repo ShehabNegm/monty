@@ -13,7 +13,7 @@ void str_handler(char *buf, unsigned int line_number)
 	char **opcode = NULL;
 	(void) line_number;
 
-	opcode = malloc(sizeof(char *) * 256);
+	opcode = malloc(sizeof(char *) * 64);
 	if (opcode == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed");
@@ -30,6 +30,8 @@ void str_handler(char *buf, unsigned int line_number)
 	}
 	if (opcode[1] == NULL)
 		opcode[1] = "\0";
+
+
 
 	printf("%s\n", opcode[0]);
 	printf("%s\n", opcode[1]);
