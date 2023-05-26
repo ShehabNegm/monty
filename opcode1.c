@@ -16,7 +16,7 @@ void push(stack_t **head, unsigned int line)
 	}
 	else
 	{
-		fprintf(stderr, "L%d:usage:push integer\n", line);
+		fprintf(stderr, "L%d:usage: push integer\n", line);
 		exit(EXIT_FAILURE);
 	}
 	add_dnodeint(head, num);
@@ -50,7 +50,7 @@ void pint(stack_t **head, unsigned int line)
 {
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty", line);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*head)->n);
@@ -68,7 +68,7 @@ void pop(stack_t **head, unsigned int line)
 
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack", line);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line);
 		exit(EXIT_FAILURE);
 	}
 	*head = tmp->next;
@@ -89,7 +89,7 @@ void swap(stack_t **head, unsigned int line)
 
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short", line);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 	tmp = (*head)->n;
