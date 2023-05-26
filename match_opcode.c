@@ -15,6 +15,10 @@ func match_opcode(char *args)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
+		{"div", _div},
+		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}};
 
 	while (opcode_f[i].opcode != NULL && strcmp(opcode_f[i].opcode, args) != 0)

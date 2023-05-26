@@ -47,6 +47,10 @@ void pop(stack_t **head, unsigned int line);
 void swap(stack_t **head, unsigned int line);
 void add(stack_t **head, unsigned int line);
 void nop(stack_t **head, unsigned int line);
+void sub(stack_t **head, unsigned int line);
+void _div(stack_t **head, unsigned int line);
+void mul(stack_t **head, unsigned int line);
+void mod(stack_t **head, unsigned int line);
 
 stack_t *add_dnodeint(stack_t **head, int n);
 int dlistint_len(stack_t **h);
