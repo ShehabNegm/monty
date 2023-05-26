@@ -11,10 +11,10 @@ func match_opcode(char *args)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
-		/*{"pop", pop},
+		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
-		{"nop", nop},*/
+		{"nop", nop},
 		{NULL, NULL}};
 
 	while (opcode_f[i].opcode != NULL && strcmp(opcode_f[i].opcode, args) != 0)

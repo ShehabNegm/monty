@@ -27,3 +27,38 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 
 	return (new);
 }
+/**
+  * dlistint_len - function to return length of d linked list
+  * @h: header of the doubly linked list
+  * Return: will return length of the list
+  */
+
+int dlistint_len(stack_t **h)
+{
+	int length = 0;
+	stack_t *tmp = *h;
+
+	while (tmp != NULL)
+	{
+		length++;
+		tmp = tmp->next;
+	}
+	return (length);
+}
+/**
+  * free_dlistint - function to free memorry allocated of d linked listes
+  * @head: header of the doubly linked list
+  */
+
+void free_dlistint(stack_t *head)
+{
+	stack_t *tmp = head;
+
+	while (head != NULL)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
+	free(head);
+}

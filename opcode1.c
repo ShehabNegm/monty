@@ -35,10 +35,11 @@ void pall(stack_t **head, __attribute__ ((unused)) unsigned int line)
 	tmp = *head;
 	while (tmp)
 	{
-		fprintf(stdout, "%d\n", tmp->n);
+		printf("%d\n", tmp->n);
 		tmp = tmp->next;
 	}
 }
+
 /**
   * pint - function to print the stack item on top only
   * @head: head of the stack
@@ -47,10 +48,51 @@ void pall(stack_t **head, __attribute__ ((unused)) unsigned int line)
 
 void pint(stack_t **head, unsigned int line)
 {
-	if(*head == NULL)
+	if (*head == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty", line);
 		exit(EXIT_FAILURE);
 	}
-	fprintf(stdout, "%d\n", (*head)->n);
+	printf("%d\n", (*head)->n);
+}
+
+/**
+  * pop - function to remove the top element of the stack
+  * @head: head of the stack
+  * @line: line_number of the argument
+  */
+
+void pop(stack_t **head, unsigned int line)
+{
+	stack_t *tmp = *head;
+
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack", line);
+		exit(EXIT_FAILURE);
+	}
+	*head = tmp->next;
+	if (tmp->next != NULL)
+		tmp->next->prev = NULL;
+	free(tmp);
+}
+/**
+  * swap - function to swap two top element of the stack
+  * @head: head of the stack
+  * @line: line_number of the argument
+  */
+
+void swap(stack_t **head, unsigned int line)
+{
+	int len = dlistint_len(head);
+	int tmp;
+
+	if (len < 2)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short", line);
+		exit(EXIT_FAILURE);
+	}
+	tmp = (*head)->n;
+	(*head)->n = (*head)->next->n;
+	(*head)->next->n = tmp;
 }

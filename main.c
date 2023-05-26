@@ -45,5 +45,6 @@ int main(int ac, char **av)
 		op_f(&head, line);
 	}
 	fclose(f);
+	free_dlistint(head);
 	return (0);
 }
