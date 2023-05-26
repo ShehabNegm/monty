@@ -32,10 +32,6 @@ int main(int ac, char **av)
 	{
 		line++;
 		opcode = str_handler(buf);
-		if (opcode == NULL)
-		{
-			continue;
-		}
 		op_f = match_opcode(opcode);
 		if (op_f == NULL)
 		{
