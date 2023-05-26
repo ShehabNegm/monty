@@ -14,19 +14,18 @@ int isnum(char *str)
 	{
 		return (0);
 	}
-	else
+	while (str[i])
 	{
-		while (str[i])
+		if (str[0] == '-')
 		{
-			if (str[0] == '-')
-			{
-				i++;
-				continue;
-			}
-			if (!isdigit(str[i]))
-				return (0);
 			i++;
+			continue;
 		}
+		if (!isdigit(str[i]))
+		{
+			return (0);
+		}
+		i++;
 	}
 	return (1);
 }

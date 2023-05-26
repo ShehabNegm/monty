@@ -48,7 +48,7 @@ void swap(stack_t **head, unsigned int line);
 void add(stack_t **head, unsigned int line);
 void nop(stack_t **head, unsigned int line);
 
-stack_t *add_dnodeint(stack_t **head, const int n);
+stack_t *add_dnodeint(stack_t **head, int n);
 int dlistint_len(stack_t **h);
 void free_dlistint(stack_t *head);
 
