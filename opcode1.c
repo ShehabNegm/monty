@@ -16,7 +16,7 @@ void push(stack_t **head, unsigned int line)
 	}
 	else
 	{
-		fprintf(stderr, "L%d:usage: push integer\n", line);
+		fprintf(stderr, "L%d: usage: push integer\n", line);
 		exit(EXIT_FAILURE);
 	}
 	add_dnodeint(head, num);

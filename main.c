@@ -16,7 +16,7 @@ int main(int ac, char **av)
 	char *opcode;
 	func op_f;
 
-	if (ac != 2 || access(av[1], F_OK) != 0)
+	if (ac != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
